@@ -1,0 +1,50 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.session-form-div {
+  position: fixed;
+  top: 30%;
+  margin: 0 auto;
+  width: 240px;
+  left: 50%;
+  margin-left: -120px;
+
+  background-color: #5a35cc;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.session-form-div h1 {
+  font-size: 30px;
+  margin-top: 14px;
+  color: white;
+}
+
+.session-form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.session-form-input {
+  padding: 4px;
+  width: 200px;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.session-form-button {
+  width: 90px;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fa-times {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}

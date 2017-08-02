@@ -1,0 +1,55 @@
+/*INDEX*/
+.catan-index-div {
+
+}
+
+.catan-index-header {
+  cursor: pointer;
+}
+
+/*SHOW*/
+.catan-show-div {
+  border: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.catan-show-date {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.catan-show-leaders {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.catan-show-leaders h2 {
+  margin: 5px;
+}
+
+.catan-show-performances-ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*SHOW -- PERFORMANCES*/
+.catan-show-performance-username-link {
+  text-decoration: none;
+}
+
+.catan-show-performance-username {
+  font-size: 30px;
+  color: black;
+}
+
+.catan-show-performance-username-winner {
+  font-size: 30px;
+  color: gold;
+}
+
+.catan-show-performance-stats li {
+  margin: 4px;
+}
