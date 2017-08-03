@@ -13,5 +13,10 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+
+node_modules
+app/assets/javascripts/bundle.js
+app/assets/javascripts/bundle.js.map
+
+.DS_Store
 .byebug_history
