@@ -16,12 +16,12 @@ class UserShowCatan extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCatanGames(this.props.userId)
+    this.props.fetchCatanGames(this.props.userId);
   }
 
   toggleGames(e) {
     e.preventDefault();
-    if (this.state.className === "catan-index-ul hidden") {
+    if (this.state.gamesClassName === "catan-index-ul hidden") {
       this.setState({gamesClassName: "catan-index-ul"})
     } else {
       this.setState({gamesClassName: "catan-index-ul hidden"})
@@ -37,14 +37,17 @@ class UserShowCatan extends React.Component {
 
     return(
       <div className="catan-index-div">
-        <h1 className="catan-index-header" onClick={this.toggleGames}>Catan</h1>
-        <h2>Stats</h2>
-
-
-        <h3>Games</h3>
-        <ul className={this.state.className}>
+        <h1 className="user-show-game-index-header">Catan</h1>
+        <h2 className="user-show-game-view-games" onClick={this.toggleGames}>View Games</h2>
+        <ul className={this.state.gamesClassName}>
           {games}
         </ul>
+
+        <h2 className="user-show-game-stats">Stats</h2>
+        <ul>
+          <li>Games: {this.props.stats.games}</li>
+        </ul>
+
       </div>
     );
   }

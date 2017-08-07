@@ -11,6 +11,7 @@ class Navbar extends React.Component {
     this.handleGoToUser = this.handleGoToUser.bind(this);
     this.handleGoHome = this.handleGoHome.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
+    this.userArea = this.userArea.bind(this);
   }
 
   handleGoHome(e) {
@@ -40,8 +41,8 @@ class Navbar extends React.Component {
     } else {
       return(
         <div className="navbar-child navbar-user-div">
-          <h1><Link className="navbar-user-div-links" to={`${this.props.location.pathname}?login=true`}>LOG IN</Link></h1>
-          <h1><Link className="navbar-user-div-links" to={`${this.props.location.pathname}?signup=true`}>SIGN UP</Link></h1>
+          <h1><Link className="navbar-user-div-links" to={`${this.props.location.pathname}?login=true`}>Log In</Link></h1>
+          <h1><Link className="navbar-user-div-links" to={`${this.props.location.pathname}?signup=true`}>Sign Up</Link></h1>
         </div>
       );
     }
