@@ -32,7 +32,7 @@ class UserShow extends React.Component {
           {headToHead}
 
           <div className="user-show-games-div">
-            <UserShowCatan stats={this.props.games.catan_stats} userId={this.props.user.id}/>
+            <UserShowCatan totalStats={this.props.games.catan_stats} userId={this.props.user.id}/>
           </div>
         </div>
       );

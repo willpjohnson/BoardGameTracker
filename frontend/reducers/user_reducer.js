@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import values from 'lodash/values';
 
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_CATAN_PERFORMANCES } from '../actions/performances/catan_actions';
 
 const defaultState = {
   user_info: {
@@ -10,6 +11,9 @@ const defaultState = {
   },
   game_stats: {
     catan_stats: null
+  },
+  game_performances: {
+    catan_performances: null
   }
 };
 
@@ -19,8 +23,11 @@ const UserReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      newState = merge({}, state, action.user)
+      newState = merge({}, state, action.user);
       return newState;
+    case RECEIVE_CATAN_PERFORMANCES:
+      newState = merge({}, state);
+      newState = action.performances;
     default:
       return state;
   }

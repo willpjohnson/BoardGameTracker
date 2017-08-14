@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resources :users do
       resources :catan_games, only: [:index]
+      resources :catan_performances, only: [:index]
     end
 
     resources :catan_games, only: [:show]

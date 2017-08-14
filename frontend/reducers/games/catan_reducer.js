@@ -21,7 +21,20 @@ const CatanReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_CATAN_GAMES:
       newState = merge({}, state);
-      newState.index = values(action.games);
+      let games = values(action.games);
+      games.forEach( (game) => {
+        let gameObject = {id: null, date: null, performances: []};
+        for (var key in game) {
+          if (key === "date") {
+            gameObject["date"] = game[key];
+          } else if (key === "id") {
+            gameObject["id"] = game[key];
+          } else {
+            gameObject.performances.push(game[key])
+          }
+        }
+        newState.index.push(gameObject);
+      });
       return newState;
     case RECEIVE_CATAN_GAME:
       newState = merge({}, defaultState);

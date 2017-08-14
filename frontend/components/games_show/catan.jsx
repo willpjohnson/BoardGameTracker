@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { dateParse } from '../../shared_functions';
+
 import { fetchCatanGame } from '../../actions/games/catan_actions';
 
 class CatanGame extends React.Component {
@@ -16,28 +18,26 @@ class CatanGame extends React.Component {
     this.props.fetchCatanGame(this.props.id_wildcard)
   }
 
-  dateParse(date) {
-    let values = date.split("-");
-    let monthNames = [
-      "January", "February", "March", "April",
-      "May", "June", "July", "August",
-      "September", "October", "November", "December"
-    ];
-    return `${monthNames[values[1]-1]} ${values[2]}, ${values[0]}`;
+  componentWillReceiveProps(nextProps) {
+    if (this.props.id_wildcard !== nextProps.id_wildcard) {
+      this.props.fetchCatanGame(nextProps.id_wildcard)
+    }
   }
 
   renderLeaders() {
-    let winner, longest_road, largest_army;
+    let winner = (<div></div>);
+    let longest_road = (<div></div>);
+    let largest_army = (<div></div>);
     this.props.performances.forEach( (perf) => {
-      if (perf.winner) winner = perf.username;
-      if (perf.longest_road) longest_road = perf.username;
-      if (perf.largest_army) largest_army = perf.username;
+      if (perf.winner) winner = (<h2>{perf.username} wins!</h2>);
+      if (perf.longest_road) longest_road = (<h2>{perf.username} had Longest Road.</h2>);
+      if (perf.largest_army) largest_army = (<h2>{perf.username} had Largest Army.</h2>);
     });
     return(
       <div className="catan-show-leaders">
-        <h2>{winner} wins!</h2>
-        <h2>{longest_road} had Longest Road.</h2>
-        <h2>{largest_army} had Largest Army.</h2>
+        {winner}
+        {longest_road}
+        {largest_army}
       </div>
     );
   }
@@ -73,7 +73,7 @@ class CatanGame extends React.Component {
     if (this.props.data.id === this.props.id_wildcard) {
       return(
         <div className="catan-show-div">
-          <h1 className="catan-show-date">{this.dateParse(this.props.data.date)}</h1>
+          <h1 className="catan-show-date">{dateParse(this.props.data.date)}</h1>
           {this.renderLeaders()}
           <ul className="catan-show-performances-ul">
             {this.renderPerformances()}

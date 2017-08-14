@@ -1,4 +1,4 @@
-games, wins, points, roads, settlements, cities, dcs, harbors, la, lr = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+games, wins, points, roads, settlements, cities, dcs, harbors, order, la, lr = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 performances.each do |perf|
   games += 1
   wins += 1 if perf.winner
@@ -10,6 +10,7 @@ performances.each do |perf|
   cities += perf.cities
   dcs += perf.dcs
   harbors += perf.harbors
+  order += perf.order
 end
 
 json.games games
@@ -22,3 +23,4 @@ json.dcs dcs
 json.harbors harbors
 json.la la
 json.lr lr
+json.order order
