@@ -13,7 +13,7 @@ const defaultState = {
     catan_stats: null
   },
   game_performances: {
-    catan_performances: null
+    catan_performances: []
   }
 };
 
@@ -27,7 +27,8 @@ const UserReducer = (state = defaultState, action) => {
       return newState;
     case RECEIVE_CATAN_PERFORMANCES:
       newState = merge({}, state);
-      newState = action.performances;
+      newState.game_performances.catan_performances = values(action.performances);
+      return newState;
     default:
       return state;
   }

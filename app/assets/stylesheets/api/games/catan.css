@@ -1,10 +1,26 @@
 /*INDEX*/
 .catan-index-div {
-
+  /*background-image: url(/assets/catan-background.jpg);*/
 }
 
 .catan-index-header {
   cursor: pointer;
+}
+
+.catan-index-table {
+  margin: 0 auto;
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+.catan-index-table tr {
+  border: 1px solid black;
+}
+
+.catan-index-table-row th {
+}
+
+.catan-index-table-row>td {
 }
 
 /*SHOW*/
@@ -58,4 +74,8 @@
 
 .catan-show-performance-stats li {
   margin: 4px;
+}
+
+.shaded {
+  background-color: #e0e0e0;
 }
